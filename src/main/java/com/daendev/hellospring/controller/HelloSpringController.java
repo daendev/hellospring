@@ -15,7 +15,7 @@ import com.daendev.hellospring.util.HibernateUtil;
 public class HelloSpringController {
 
 	@RequestMapping("/hello")
-	public Greeting hi() {
+	public List<Greeting> hi() {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
          
@@ -24,8 +24,8 @@ public class HelloSpringController {
          
         session.close();
         
-        // Return first (Hello World)
-        return greetings.get(0);
+        // Return all data as list
+        return greetings;
 	}
 	
 }
