@@ -1,23 +1,34 @@
 package com.daendev.hellospring.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table
+@Entity
 public class Greeting {
 
-	private int id;
+	@Id
+	@GeneratedValue
+	private Integer id;
 	private String greeting;
 	private String address;
 	
-	public Greeting(int id, String greeting, String address) {
+	public Greeting() {}
+	
+	public Greeting(Integer id, String greeting, String address) {
 		super();
 		this.id = id;
 		this.greeting = greeting;
 		this.address = address;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
